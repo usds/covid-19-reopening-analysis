@@ -1,0 +1,148 @@
+.states path,
+.counties path {
+  fill: color($theme-color-covid-graph-map-no-data);
+}
+.states,
+.counties {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.map {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.map-legend {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: units(2);
+
+  @include at-media("desktop") {
+    margin-top: 0;
+  }
+}
+
+.map-legend .legend-title {
+  margin-bottom: units(1);
+  text-align: left;
+  @include u-font("body", "2xs");
+}
+
+.map-legend .legend-scale ul {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  float: left;
+  list-style: none;
+}
+
+.map-legend .legend-scale ul li {
+  @include u-font("body", "3xs");
+  list-style: none;
+  margin-left: 0;
+  line-height: 18px;
+  margin-bottom: 2px;
+}
+
+.map-legend ul.legend-labels li span {
+  display: block;
+  float: left;
+  height: 16px;
+  width: 30px;
+  margin-right: 5px;
+  margin-left: 0;
+  border: 1px solid #999;
+}
+
+.tooltip {
+  position: absolute;
+  width: 200px;
+}
+
+$counties--cases-not-downward: color($theme-color-covid-graph-map-cases-upward);
+$counties--cases-six-days: color($theme-color-covid-graph-map-cases-six-days);
+$counties--cases-thirteen-days: color(
+  $theme-color-covid-graph-map-cases-thirteen-days
+);
+$counties--cases-twenty-days: color(
+  $theme-color-covid-graph-map-cases-twenty-days
+);
+$counties--cases-forty-one-days: color(
+  $theme-color-covid-graph-map-cases-forty-one-days
+);
+$counties--cases-gt-forty-one-days: color(
+  $theme-color-covid-graph-map-cases-gt-forty-one-days
+);
+$counties--cases-one-to-five: color(
+  $theme-color-covid-graph-map-cases-one-to-five
+);
+$counties--cases-zero: color($theme-color-covid-graph-map-cases-zero);
+$counties--cases-none: color($theme-color-covid-graph-map-cases-none);
+
+$counties--increasing: color($theme-color-covid-graph-map-increasing);
+$counties--decreasing: color($theme-color-covid-graph-map-decreasing);
+$counties--plateau: color($theme-color-covid-graph-map-plateau);
+$counties--not-calculated: color($theme-color-covid-graph-map-no-data);
+
+path,
+span {
+  &.counties--cases-six-days {
+    fill: $counties--cases-six-days;
+    background: $counties--cases-six-days;
+  }
+  &.counties--cases-thirteen-days {
+    fill: $counties--cases-thirteen-days;
+    background-color: $counties--cases-thirteen-days;
+  }
+  &.counties--cases-twenty-days {
+    fill: $counties--cases-twenty-days;
+    background-color: $counties--cases-twenty-days;
+  }
+  &.counties--cases-forty-one-days {
+    fill: $counties--cases-forty-one-days;
+    background-color: $counties--cases-forty-one-days;
+  }
+  &.counties--cases-gt-forty-one-days {
+    fill: $counties--cases-gt-forty-one-days;
+    background-color: $counties--cases-gt-forty-one-days;
+  }
+  &.counties--cases-not-downward {
+    fill: $counties--cases-not-downward;
+    background-color: $counties--cases-not-downward;
+  }
+  &.counties--cases-one-to-five {
+    fill: $counties--cases-one-to-five;
+    background-color: $counties--cases-one-to-five;
+  }
+  &.counties--cases-zero {
+    fill: $counties--cases-zero;
+    background-color: $counties--cases-zero;
+  }
+  &.counties--cases-none {
+    fill: $counties--cases-none;
+    background-color: $counties--cases-none;
+  }
+  &.counties--increasing {
+    fill: $counties--increasing;
+    background-color: $counties--increasing;
+  }
+  &.counties--decreasing {
+    fill: $counties--decreasing;
+    background-color: $counties--decreasing;
+  }
+  &.counties--plateau {
+    fill: $counties--plateau;
+    background-color: $counties--plateau;
+  }
+  &.counties--not-calculated {
+    fill: $counties--not-calculated;
+    background-color: $counties--not-calculated;
+  }
+}
+
+.county:hover {
+  stroke: color($theme-color-covid-graph-map-hover-stoke);
+  stroke-width: 2px;
+  fill-opacity: 0.8;
+}

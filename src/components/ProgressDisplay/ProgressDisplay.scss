@@ -1,0 +1,194 @@
+$progress-display-whisker-width: 3px;
+
+.c19-sr-progress-display {
+  margin-top: units(2);
+  padding: units(3)units(3) units(2) units(3);
+  border: 1px solid color($theme-color-base-lighter);
+
+  @include at-media("desktop") {
+    @include grid-col(8);
+  }
+
+  @include at-media("tablet") {
+    @include grid-row;
+  }
+
+  &__container {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__days-container,
+  &__days {
+    display: flex;
+    height: 28px;
+  }
+
+  &__days {
+    align-items: center;
+  }
+
+  &__day-labels {
+    padding-right: units(1);
+  }
+
+  &__day-label--decrease {
+    padding-top: 2px;
+  }
+
+  &__summary {
+    position: relative;
+    margin-left: units(2);
+    margin-bottom: units(1);
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: -20px;
+      top: 2px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__summary.is-met {
+    color: color($theme-color-success-dark);
+  }
+
+  &__summary.is-not-met {
+    color: color($theme-color-error-dark);
+  }
+
+  &__summary.is-met::before {
+    background-image: url("../../img/check.svg");
+  }
+
+  &__summary.is-not-met::before {
+    background-image: url("../../img/times.svg");
+  }
+
+  &__labels {
+    position: relative;
+    margin: units(0.5) 0 units(4);
+    @include u-font-size("body", "2xs");
+  }
+
+  &__met-description {
+    margin-top: units(1);
+    @include u-font-size("body", "2xs");
+    color: color($theme-color-c19-dark);
+  }
+
+  &__data,
+  &__desc {
+    @include at-media("tablet") {
+      @include grid-col(12);
+    }
+  }
+
+  &__data {
+    @include at-media("tablet-lg") {
+      @include grid-col(12);
+    }
+  }
+
+  &__desc {
+    @include at-media("tablet-lg") {
+      @include grid-col(12);
+    }
+  }
+}
+
+.c19-sr-progress-display-day {
+  display: inline-block;
+  width: $progress-display-whisker-width;
+  height: 14px;
+  margin-right: 4px;
+}
+
+.c19-sr-progress-display-day-label--decrease,
+.c19-sr-progress-display-day-label--increase {
+  @include u-font-size("body", "3xs");
+  text-align: left;
+}
+
+.c19-sr-progress-display-day-label--decrease,
+.c19-sr-progress-display-day--met,
+.c19-sr-progress-display-day--metphase {
+  align-self: flex-end;
+}
+
+.c19-sr-progress-display-day-label--decrease {
+  color: color($theme-color-c19-progress-tick-decrease);
+}
+
+.c19-sr-progress-display-day--met {
+  background: color($theme-color-c19-progress-tick-decrease);
+}
+
+.c19-sr-progress-display-day--metphase {
+  background: color($theme-color-c19-progress-tick-decrease);
+  /*border-top: 2px solid #f00;*/
+}
+
+.c19-sr-progress-display-day-label--increase,
+.c19-sr-progress-display-day--reset,
+.c19-sr-progress-display-day--missed {
+  align-self: flex-start;
+}
+
+.c19-sr-progress-display-day-label--increase {
+  color: color($theme-color-c19-progress-tick-increase);
+}
+
+.c19-sr-progress-display-day--missed {
+  background: color($theme-color-c19-progress-tick-increase);
+}
+
+.c19-sr-progress-display-day--reset {
+  background: color($theme-color-c19-progress-tick-reset);
+  align-self: flex-start;
+}
+
+.c19-sr-progress-display-day--nodata {
+  background: color($theme-color-c19-progress-tick-no-data);
+}
+
+.c19-sr-progress-display-label-start {
+  position: absolute;
+  left: 1px;
+}
+
+.c19-sr-progress-display-label-end {
+  position: absolute;
+  right: -30px;
+}
+
+.c19-sr-progress-display-label-start::before,
+.c19-sr-progress-display-label-end::before {
+  content: "| ";
+}
+
+.c19-sr-progress-display-reset {
+  margin-top: units(2);
+
+  &__title {
+    margin-top: units(2);
+    padding-left: units(0.5);
+    font-weight: bold;
+    @include u-font-size("body", "2xs");
+    color: color($theme-color-c19-progress-tick-reset);
+    border-left: $progress-display-whisker-width solid
+      color($theme-color-c19-progress-tick-reset);
+
+    @include at-media("tablet") {
+      margin-top: units(3);
+    }
+  }
+
+  &__desc {
+    margin-top: units(0.5);
+    @include u-font-size("body", "2xs");
+  }
+}

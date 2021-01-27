@@ -1,0 +1,26 @@
+// import React from "react";
+
+// import { mockCovidTimeSeries } from "../app/mockData";
+// import { AppStoreProvider } from "../app/AppStore";
+
+// import CountyMap from "../components/Maps/CountyMap";
+
+// export default {
+//     title: "Map",
+//     component: CountyMap
+// }
+
+// export const TestingMap = () => <AppStoreProvider
+// initialState={{
+//   covidTimeSeries: mockCovidTimeSeries,
+//   selection: {
+//     date: "2020-3-15",
+//     state: "1",
+//     county: "1|1",
+//     metric: "confirmed"
+//   },
+//   mapView: { width: 400, height: 600, latitude: 40.8136, longitude:-99.0762, zoom: 2 }
+// }}
+// >
+// <CountyMap presetState={"GA"} />
+// </AppStoreProvider>;

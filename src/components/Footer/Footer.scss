@@ -1,0 +1,28 @@
+footer{
+  @include u-font-size("body", "2xs");
+  color: color($theme-color-base-dark);
+
+  @include at-media("mobile") {
+    padding: units(4) 0 units(2) 0;
+  }
+
+  @include at-media("desktop") {
+    padding: units(4) 0;
+  }
+
+  .c19-sr-footer {
+    border-top: 1px solid color($theme-color-base-lighter);
+    padding-top: units(4);
+  }
+
+  p, ul, li{
+    font-size: inherit;
+  }
+
+  p, ul {
+
+    @include at-media("tablet") {
+      @include grid-col(8);
+    }
+  }
+}

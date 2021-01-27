@@ -1,3 +1,7 @@
+## Status: Inactive
+
+This project is currently inactive due to the lack of adoption by State governments. After removing any sensitive data, the application is not currently functioning. Please reach out to [Kelvin Luu](kelvin.t.luu@omb.eop.gov) if you have a use case for this project.
+
 # COVID-19 Indicators for Reopening
 
 > ... we are still putting on our shoes.

@@ -1,0 +1,52 @@
+// Accordion
+
+.c19-sr-accordion + .c19-sr-accordion {
+  margin-top: units(2);
+}
+
+.c19-sr-accordion {
+  @include at-media("desktop") {
+    @include grid-col(12);
+  }
+
+  &__button {
+    position:relative;
+    padding: units(2) units(2);
+    @include u-bg('gray-10');
+    @include u-border-left('gray-40');
+    @include u-border-left(1);
+
+    &:hover{
+      @include u-bg('gray-20');
+    }
+  }
+
+  &__title {
+    @include u-font('sans', 'md');
+  }
+
+  &__sub-title {
+    margin: 0;
+    @include u-font('sans', 'xs');
+    @include u-text('uppercase');
+    @include u-text('normal');
+  }
+
+  &__content {
+    padding: units(3);
+    @include u-bg('gray-3');
+    @include u-border('gray-3');
+  }
+
+  &__icon {
+    display: flex;
+    margin-right: units(2);
+    padding: units(0) units(2);
+    @include u-bg('gray-40');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    align-items: center;
+  }
+}

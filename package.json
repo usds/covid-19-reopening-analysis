@@ -1,0 +1,79 @@
+{
+  "name": "ui",
+  "version": "0.1.0",
+  "homepage": "/opua/",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@turf/bbox": "^6.0.1",
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-modal": "^3.10.5",
+    "@types/recharts": "^1.8.7",
+    "@types/urijs": "^1.19.7",
+    "axios": "^0.19.2",
+    "babel": "^6.23.0",
+    "classnames": "^2.2.6",
+    "d3": "^5.16.0",
+    "d3-geo": "^1.12.1",
+    "dotenv": "^8.2.0",
+    "leaflet": "^1.6.0",
+    "mapbox-gl": "^1.8.1",
+    "moment": "^2.25.3",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-map-gl": "^5.2.3",
+    "react-modal": "^3.11.2",
+    "react-scripts": "3.4.0",
+    "recharts": "^1.8.5",
+    "topojson": "^3.0.2",
+    "topojson-client": "^3.1.0",
+    "topojson-server": "^3.0.1",
+    "typescript": "~3.7.2",
+    "urijs": "^1.19.2",
+    "uswds": "^2.7.0",
+    "yarn": "^1.22.4"
+  },
+  "scripts": {
+    "start": "echo set fips to be the state fips code && exit && REACT_APP_BASE_FIPS=##### react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prettier.write": "prettier --write './src/**/*.{ts,tsx}'",
+    "storybook": "echo set fips to be the state fips code && exit && REACT_APP_BASE_FIPS=##### start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public",
+    "toolkit:build": "rm -rf ./toolkit/dist && mkdir -p ./toolkit/dist/toolkit/{_scratch} && tsc --p tsconfig.toolkit.json",
+    "spline:ref": "rscript ./toolkit/referene_locality/ref_analysis.R",
+    "analysis:ref": "yarn toolkit:build && yarn spline:ref && node ./toolkit/dist/toolkit/util/csvToJson && node ./toolkit/dist/toolkit/ref/refReportGenerator && cp ./toolkit/dist/toolkit/_scratch/reports/* ./public/covidstats"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.18",
+    "@storybook/react": "^5.3.17",
+    "@types/d3": "^5.7.2",
+    "@types/leaflet": "^1.5.11",
+    "@types/storybook__react": "^5.2.1",
+    "csv-parse": "^4.9.1",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1"
+  }
+}

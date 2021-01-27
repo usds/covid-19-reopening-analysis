@@ -1,0 +1,37 @@
+@import "scss/_uswds-theme-general";
+@import "scss/_uswds-theme-typography";
+@import "scss/_uswds-theme-spacing";
+@import "scss/_uswds-theme-color";
+@import "scss/_uswds-theme-utilities";
+
+// This would import everything, but we don't need everything
+// @import "~uswds/dist/scss/uswds.scss";
+
+// Individual include
+@import "~uswds/src/stylesheets/packages/required";
+@import "~uswds/src/stylesheets/packages/global";
+@import "~uswds/src/stylesheets/base/accessibility";
+
+// Individual components from uswds
+@import "~uswds/src/stylesheets/packages/form-controls";
+@import "~uswds/src/stylesheets/packages/layout-grid";
+@import "~uswds/src/stylesheets/packages/typography";
+@import "~uswds/src/stylesheets/packages/usa-accordion";
+@import "~uswds/src/stylesheets/packages/usa-alert";
+@import "~uswds/src/stylesheets/packages/usa-checklist";
+@import "~uswds/src/stylesheets/packages/usa-media-block";
+@import "~uswds/src/stylesheets/packages/usa-skipnav";
+@import "~uswds/src/stylesheets/packages/usa-table";
+@import "~uswds/src/stylesheets/packages/usa-button";
+
+@import "~uswds/src/stylesheets/packages/uswds-utilities";
+
+// Import theme custom styles
+@import "scss/_uswds-theme-custom-styles";
+
+// Import component styles
+@import "components/Accordion/Accordion.scss";
+@import "components/ProgressDisplay/ProgressDisplay.scss";
+@import "components/CriteriaDetail/CriteriaDetail.scss";
+@import "components/Footer/Footer.scss";
+@import "components/Maps/map.scss";

@@ -1,0 +1,464 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+USWDS THEME CUSTOM STYLES
+----------------------------------------
+!! Copy this file to your project's
+   sass root. Don't edit the version
+   in node_modules.
+----------------------------------------
+Custom project SASS goes here.
+
+i.e.
+@include u-padding-right('05');
+----------------------------------------
+*/
+
+/*
+Spacing units cheatsheet:
+  1:  8px
+  2: 16px
+  3: 24px
+  4: 32px
+  5: 40px
+  6: 48px
+*/
+
+body {
+  background-color: #fff;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Typography
+p,
+li {
+  @include u-font-size("body", "md");
+}
+
+.c19-sr {
+  &__main {
+    margin: units(4) 0;
+
+    .grid-container {
+      padding-left: units(1);
+      padding-right: units(1);
+
+      @include at-media("tablet") {
+        padding-left: units(2);
+        padding-right: units(2);
+      }
+
+      @include at-media("tablet-lg") {
+        padding-left: units(4);
+        padding-right: units(4);
+      }
+    }
+  }
+}
+
+.c19-sr-update {
+  margin: 0 0 units(1);
+  color: color($theme-color-c19-dark);
+  @include u-font-size("body", "sm");
+}
+
+.c19-sr-reopening-status {
+
+  &__alert {
+    margin: units(2) 0 units(3) 0;
+    padding-bottom: units(3);
+    @include at-media("desktop") {
+      @include grid-col(8);
+    }
+  }
+
+  &__sub-title {
+    padding-bottom: units(1.5);
+  }
+
+  &__list {
+    margin-left: units(1.5);
+  }
+
+  &__item {
+    @include u-line-height("body", 2);
+    margin-bottom: units(1.5);
+    padding-left: units(1);
+  }
+
+  &__para2 {
+    margin-bottom: units(4);
+  }
+}
+
+.c19-sr-guidelines {
+  &__title {
+    margin-top: units(5);
+  }
+}
+
+.c19-sr-phases {
+  width: 100%;
+  margin: units(5) 0;
+
+  @include at-media("desktop") {
+    @include grid-col(8);
+  }
+}
+
+.c19-sr-phase {
+  &__title {
+    margin-top: units(3);
+  }
+
+  &__list {
+    margin-left: units(2);
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: units(2) !important;
+    padding-left: units(0);
+    @include u-font-size("body", "sm");
+  }
+
+  &__link {
+    display: block;
+    @include u-text("bold");
+  }
+
+  &__item::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: -40px;
+    top: 4px;
+    background-repeat: no-repeat;
+  }
+
+  &__item.is-met::before {
+    background-image: url("../img/check.svg");
+  }
+
+  &__item.is-not-met::before {
+    background-image: url("../img/times.svg");
+  }
+
+  &__sub-list {
+    position: relative;
+    margin-left: units(1);
+    list-style: none;
+  }
+}
+
+.c19-sr-criteria {
+  margin-top: units(6);
+
+  &__title {
+    position: relative;
+    margin-left: 20px;
+    @include u-font-size("body", "sm");
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: -20px;
+      top: 0;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__title.is-met {
+    color: color($theme-color-success-dark);
+  }
+
+  &__title.is-not-met {
+    color: color($theme-color-error-dark);
+  }
+
+  &__title.is-met::before {
+    background-image: url("../img/check.svg");
+  }
+
+  &__title.is-not-met::before {
+    background-image: url("../img/times.svg");
+  }
+
+  &__icon {
+    width: 14px;
+    margin-right: units(1);
+    vertical-align: middle;
+  }
+
+  &__icon.is-met svg {
+    fill: color($theme-color-success-dark);
+  }
+
+  &__icon.is-not-met svg {
+    fill: color($theme-color-error-dark);
+  }
+
+  &__criteria-headline {
+    //border-top: 1px solid color($theme-color-base-lighter);
+    padding-top: 0;
+  }
+
+  &__criteria-desc {
+    @include u-line-height("body", 3);
+    margin-top: units(1);
+
+    @include at-media("desktop") {
+      @include grid-col(8);
+    }
+
+    span{
+      //@include u-font-size("body", "md");
+      color: color($theme-color-base-light);
+    }
+  }
+
+  &__updated-at {
+    margin-top: units(0.5);
+    @include u-font-size("body", "xs");
+    font-weight: $theme-font-weight-bold;
+  }
+}
+
+.c19-sr-criteria-static {
+  &.is-met {
+    color: color($theme-color-success-dark);
+  }
+
+  &.is-not-met {
+    color: color($theme-color-error-dark);
+  }
+
+  &.is-unknown {
+    color: color($theme-color-c19-dark);
+  }
+}
+
+.c19-sr-criteria-graph {
+  margin-top: units(4);
+  padding-left: units(1);
+  border-bottom: 1px solid color($theme-color-base-lighter);
+
+  @include at-media("mobile-lg") {
+    margin-left: 0;
+  }
+
+  @include at-media("tablet") {
+    padding-left: units(2);
+    border-left: 5px solid color($theme-color-base-lighter);
+    border-bottom: none;
+  }
+
+  @include at-media("tablet-lg") {
+    padding-left: units(3);
+  }
+
+  .recharts-wrapper {
+    margin-right: -#{units(2)};
+  }
+
+  &__title {
+    @include u-font-size("body", "md");
+  }
+
+  &__override-image {
+    max-height: 300px;
+  }
+}
+
+.c19-sr-criteria-graph-and-table-container {
+  margin-top: 0;
+}
+
+.c19-sr-criteria-graph-summary,
+.c19-sr-criteria-graph-details,
+.c19-sr-criteria-graph-source {
+  margin-top: units(3);
+
+  &__list {
+    margin-top: units(1);
+  }
+}
+
+// Recharts custom styles
+
+.c19-sr-scatter-dot {
+  fill: #aeb0b5;
+}
+
+.c19-sr-data-point-label {
+  fill: #0071bc;
+}
+
+.c19-sr-spline-line-label {
+  fill: #0071bc;
+  @include u-text("bold");
+}
+
+.c19-sr-scatter-label {
+  display: none;
+}
+
+.c19-sr-not-yet-reported {
+  fill: #999;
+}
+
+.c19-sr-xaxis-label {
+  fill: #666;
+}
+
+.c19-sr-xaxis-tick {
+  stroke: #ccc;
+}
+
+.recharts-reference-area-rect {
+  fill: #f1f1f1;
+}
+
+// Recharts default legend
+.recharts-legend-wrapper {
+  padding-left: units(4);
+}
+
+.recharts-legend-item {
+  padding-right: units(3);
+}
+
+.recharts-legend-item-text {
+  @include u-font("body", "3xs");
+  margin-left: units(1);
+  color: color($theme-color-base-dark);
+}
+
+// Recharts tooltip
+.c19-sr-graph-custom-tooltip {
+  @include u-bg("gray-1");
+  @include u-border(1px, "gray-40");
+  @include u-font("body", "3xs");
+
+  &__data-adjusting {
+    .cell-label {
+      padding-bottom: units(1);
+    }
+  }
+
+  th,
+  td {
+    @include u-bg("gray-1");
+    @include u-padding-x(1.5);
+    border: none;
+    vertical-align: top;
+  }
+
+  th {
+    @include u-padding-y(1);
+  }
+
+  td {
+    @include u-padding-y(0);
+  }
+
+  tr {
+    &:last-child {
+      td {
+        padding-bottom: units(1);
+      }
+    }
+  }
+
+  .cell-date {
+    @include u-text("bold");
+  }
+
+  .cell-label {
+    padding-right: units(1);
+    color: color($theme-color-base-dark);
+  }
+
+  .cell-value {
+    text-align: right;
+  }
+}
+
+.recharts-layer.recharts-reference-dot {
+  .recharts-text.recharts-label {
+    fill: color($theme-color-base-dark);
+    @include u-font("body", "3xs");
+  }
+}
+
+.recharts-layer.recharts-reference-line {
+  .recharts-text.recharts-label {
+    fill: color($theme-color-covid-graph-reference-line);
+  }
+}
+
+// Recharts container and responsive axis tick marks
+.recharts-responsive-container {
+  margin-top: 0;
+  margin-left: -1rem;
+}
+.recharts-surface {
+  @include u-font-size("body", "3xs");
+
+  .recharts-xAxis.xAxis {
+    .recharts-cartesian-axis-tick {
+      display: inherit;
+
+      @include at-media("tablet-lg") {
+        display: inherit;
+      }
+    }
+
+    .recharts-cartesian-axis-tick text[text-anchor="left"] {
+      display: inherit;
+    }
+
+    .recharts-cartesian-axis-tick:first-child {
+      display: inherit;
+    }
+
+    .recharts-cartesian-axis-tick:nth-child(5n) {
+      display: inherit;
+
+      @include at-media("tablet") {
+        display: inherit;
+      }
+      @include at-media("tablet-lg") {
+        display: inherit;
+      }
+    }
+    .recharts-cartesian-axis-tick:nth-child(3n) {
+      @include at-media("tablet") {
+        display: inherit;
+      }
+      @include at-media("tablet-lg") {
+        display: inherit;
+      }
+    }
+  }
+
+  .recharts-layer.recharts-cartesian-axis.recharts-xAxis.xAxis
+    + .recharts-layer.recharts-cartesian-axis.recharts-xAxis.xAxis
+    + .recharts-layer.recharts-cartesian-axis.recharts-xAxis.xAxis {
+    .recharts-cartesian-axis-tick {
+      display: inherit;
+    }
+  }
+}

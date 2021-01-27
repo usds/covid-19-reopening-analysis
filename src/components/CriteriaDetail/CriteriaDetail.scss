@@ -1,0 +1,51 @@
+// Color settings for graph components
+
+// Scatter and line graph
+.c19-sr-graph-color__data-point {
+  fill: color($theme-color-covid-graph-data-point);
+  color: color($theme-color-covid-graph-data-point);
+}
+
+.c19-sr-graph-color__smooth-line {
+  color: color($theme-color-covid-graph-blue);
+  stroke: color($theme-color-covid-graph-blue);
+
+  path {
+    stroke: color($theme-color-covid-graph-blue);
+  }
+  line {
+    stroke: color($theme-color-covid-graph-blue);
+  }
+}
+
+.c19-sr-graph-color__data-positive-test-bar {
+  fill: color($theme-color-covid-graph-tests-positive);
+  color: color($theme-color-covid-graph-tests-positive);
+}
+.c19-sr-graph-color__data-negative-test-bar {
+  fill: color($theme-color-covid-graph-tests-negative);
+  color: color($theme-color-covid-graph-tests-negative);
+}
+
+.c19-sr-graph-color__data-hospital-bottom {
+  fill: color($theme-color-covid-graph-hospital-in-use);
+  color: color($theme-color-covid-graph-hospital-in-use);
+}
+.c19-sr-graph-color__data-hospital-top {
+  fill: none;
+  color: none;
+}
+
+// Stacked bar chart
+.c19-sr-graph-color__bottom-bar {
+  color: color($theme-color-covid-graph-blue);
+}
+.c19-sr-graph-color__top-bar {
+  color: color($theme-color-covid-graph-red);
+}
+.c19-sr-graph-color__ref-area {
+  color: color($theme-color-covid-graph-green);
+}
+.c19-sr-graph-color__ref-line {
+  color: color($theme-color-covid-graph-cyan);
+}
