@@ -73,7 +73,7 @@
     "@types/leaflet": "^1.5.11",
     "@types/storybook__react": "^5.2.1",
     "csv-parse": "^4.9.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1"
   }
 }
